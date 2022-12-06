@@ -1,1 +1,14 @@
+<!-- Titolo della pagina-->
 <h1>{{ title }}</h1>
+
+<!-- Inserimento di una chiave -->
+<p>
+  <input
+    class="inputKey"
+    #key
+    (keyup.enter)="openShow(key.value)"
+    placeholder="Inserisci la chiave associata allo spettacolo e premi invio"
+  />
+</p>
+
+<h2 id="prova"></h2>

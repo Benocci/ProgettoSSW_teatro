@@ -7,4 +7,8 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   title = 'Prenotazione teatro';
+
+  createShow(key: string) {}
+
+  openShow(key: string) {}
 }
