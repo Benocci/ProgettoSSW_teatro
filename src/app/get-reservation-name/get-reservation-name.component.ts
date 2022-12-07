@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-get-reservation-name',
   templateUrl: './get-reservation-name.component.html',
-  styleUrls: ['./get-reservation-name.component.css']
+  styleUrls: ['./get-reservation-name.component.css'],
 })
 export class GetReservationNameComponent implements OnInit {
+  @Input() key: string | undefined;
 
-  constructor() { }
+  name: string;
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  changeName(name: string) {
+    this.name = name;
   }
-
 }
