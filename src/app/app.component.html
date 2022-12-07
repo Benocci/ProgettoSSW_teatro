@@ -2,25 +2,28 @@
 <h1>{{ title }}</h1>
 
 <!-- Inserimento di una chiave -->
-<p>
-  Inserisci qui la chiave:
+<fieldset>
+  <legend>Inserisci la chiave associata allo spettacolo e premi invio</legend>
   <input
     class="inputKey"
     #key
     (keyup.enter)="selectShow(key.value)"
-    placeholder="Inserisci la chiave associata allo spettacolo e premi invio"
+    placeholder="Inserisci qui la chiave"
   />
-</p>
-
+</fieldset>
+<!-- Lista degli spettacoli disponibili-->
 <h3>Chiavi degli spettacoli disponibili:</h3>
 <div *ngFor="let show of showList">
   {{ show }}
 </div>
 
+<!-- Creazione di un nuovo spettacolo-->
 <h3><button (click)="createShow()">Crea un nuovo spettacolo</button></h3>
 
-<h2 id="prova"></h2>
+<!-- Form di inserimento nome per la prenotazione -->
+<app-get-reservation-name></app-get-reservation-name>
 
+<!-- Visualizzazione teatro -->
 <app-openreservation
   [parterre]="parterre"
   [stage]="stage"

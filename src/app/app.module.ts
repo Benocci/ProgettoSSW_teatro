@@ -5,11 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TheaterService } from './theater.service';
-import { OpenreservationComponent } from './openreservation/openreservation.component'
+import { OpenreservationComponent } from './open-reservation/open-reservation.component';
+import { GetReservationNameComponent } from './get-reservation-name/get-reservation-name.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule],
-  declarations: [AppComponent, OpenreservationComponent],
+  declarations: [
+    AppComponent,
+    OpenreservationComponent,
+    GetReservationNameComponent,
+  ],
   providers: [TheaterService],
   bootstrap: [AppComponent],
 })
