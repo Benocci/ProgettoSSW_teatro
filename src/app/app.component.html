@@ -7,7 +7,7 @@
   <input
     class="inputKey"
     #key
-    (keyup.enter)="selectShow(key.value); key.value='';"
+    (keyup.enter)="selectShow(key.value); key.value = ''"
     placeholder="Inserisci qui la chiave"
   />
 </fieldset>
@@ -21,7 +21,10 @@
 <h3><button (click)="createShow()">Crea un nuovo spettacolo</button></h3>
 
 <!-- Form di inserimento nome per la prenotazione -->
-<app-get-reservation-name [key]="showKey"></app-get-reservation-name>
+<app-get-reservation-name
+  [key]="showKey"
+  (newBookerName)="bookerName = $event"
+></app-get-reservation-name>
 
 <!-- Visualizzazione teatro -->
 <app-openreservation
