@@ -13,6 +13,7 @@ export class AppComponent {
   stage: any[] = [];
   showKey: string;
   bookerName: string;
+  seat: { row: number; column: number } = undefined;
 
   constructor(private service: TheaterService) {}
 
@@ -50,5 +51,4 @@ export class AppComponent {
       error: (err) => alert('Chiave inserita non valida'),
     });
   }
-  
 }

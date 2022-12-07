@@ -32,4 +32,9 @@
 <app-openreservation
   [parterre]="parterre"
   [stage]="stage"
+  (selectedSeat)="seat = $event"
 ></app-openreservation>
+
+<p *ngIf="seat != undefined">
+  Il posto selezionato è P{{ seat.row+1 }}-{{ seat.column+1 }}
+</p>
