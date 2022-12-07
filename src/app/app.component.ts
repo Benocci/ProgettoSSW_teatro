@@ -38,7 +38,7 @@ export class AppComponent {
     });
   }
 
-  openShow(key: string) {
+  selectShow(key: string) {
     this.service.getData(key).subscribe({
       next: (x: any) => {
         const theater = JSON.parse(x);

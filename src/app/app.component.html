@@ -3,10 +3,11 @@
 
 <!-- Inserimento di una chiave -->
 <p>
+  Inserisci qui la chiave:
   <input
     class="inputKey"
     #key
-    (keyup.enter)="openShow(key.value)"
+    (keyup.enter)="selectShow(key.value)"
     placeholder="Inserisci la chiave associata allo spettacolo e premi invio"
   />
 </p>
@@ -19,3 +20,8 @@
 <h3><button (click)="createShow()">Crea un nuovo spettacolo</button></h3>
 
 <h2 id="prova"></h2>
+
+<app-openprenotation
+  [parterre]="parterre"
+  [stage]="stage"
+></app-openprenotation>

@@ -5,12 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TheaterService } from './theater.service';
-import { ShowCreatorComponent } from './show-creator/show-creator.component';
+import { OpenprenotationComponent } from './openprenotation/openprenotation.component'
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule ],
-  declarations: [ AppComponent, ShowCreatorComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
+  declarations: [AppComponent, OpenprenotationComponent],
   providers: [TheaterService],
-  bootstrap:    [ AppComponent ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
