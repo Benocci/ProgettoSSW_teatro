@@ -1,13 +1,19 @@
 <h3 *ngIf="parterre.length != 0">Platea</h3>
 <div *ngFor="let row of parterre; let i = index">
-  <button *ngFor="let seat of row; let j = index" (click)="addSeat(i,j)">
+  <button
+    *ngFor="let seat of row; let j = index"
+    (click)="addSeat(i, j, 'platea')"
+  >
     P{{ i + 1 }}-{{ j + 1 }}
   </button>
 </div>
 
 <h3 *ngIf="stage.length != 0">Palco</h3>
 <div *ngFor="let row of stage; let i = index">
-  <button *ngFor="let seat of row; let j = index">
+  <button
+    *ngFor="let seat of row; let j = index"
+    (click)="addSeat(i, j, 'palco')"
+  >
     P{{ i + 1 }}-{{ j + 1 }}
   </button>
 </div>
