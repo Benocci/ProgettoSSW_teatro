@@ -5,11 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TheaterService } from './theater.service';
-import { OpenprenotationComponent } from './openprenotation/openprenotation.component'
+import { OpenreservationComponent } from './openreservation/openreservation.component'
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule],
-  declarations: [AppComponent, OpenprenotationComponent],
+  declarations: [AppComponent, OpenreservationComponent],
   providers: [TheaterService],
   bootstrap: [AppComponent],
 })
