@@ -20,6 +20,8 @@
 <!-- Creazione di un nuovo spettacolo-->
 <h3><button (click)="createShow()">Crea un nuovo spettacolo</button></h3>
 
+<!-- Titolo dello spettacolo selezionato -->
+<h2 *ngIf="showKey != undefined">Spettacolo con codice "{{ showKey }}"</h2>
 <!-- Form di inserimento nome per la prenotazione -->
 <app-get-reservation-name
   [key]="showKey"

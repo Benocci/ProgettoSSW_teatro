@@ -8,12 +8,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class GetReservationNameComponent implements OnInit {
   @Input() key: string | undefined;
   @Output() newBookerName = new EventEmitter<string>();
+  name: string;
 
   constructor() {}
 
   ngOnInit() {}
 
-  changeName(name: string) {
-    this.newBookerName.emit(name);
+  changeName(newName: string) {
+    this.name = newName;
+    this.newBookerName.emit(this.name);
   }
 }

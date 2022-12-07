@@ -9,7 +9,7 @@
     (keyup.enter)="changeName(newName.value); newName.value = ''"
   />
 
-  <p *ngIf="name != undefined">
+  <p *ngIf="name !== undefined">
     Ciao {{ name }}, clicca sui posti che vuoi prenotare!<br />
     Se vuoi cambiare nome digitane pure uno nuovo.
   </p>
