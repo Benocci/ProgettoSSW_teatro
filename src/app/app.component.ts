@@ -8,15 +8,45 @@ import { TheaterService } from './theater.service';
 })
 export class AppComponent {
   title = 'Prenotazione teatro';
-  show: string[] = ['71dc513b'];
+  showList: string[] = ['3054e7d3'];
+  parterre: any[] = [];
+  stage: any[] = [];
+  showKey: string;
 
   constructor(private service: TheaterService) {}
 
-  createShow(key: string) {}
+  createShow() {
+    this.service.newData().subscribe({
+      next: (x: any) => {
+        const chiave = x;
+        const theater = new Array(7)
+          .fill('')
+          .map(() => Array(10).fill('x'))
+          .concat(new Array(4).fill('').map(() => Array(6).fill('x')));
+        this.service.setData(chiave, theater).subscribe({
+          next: (x: any) => {
+            this.showList.push(chiave);
+          },
+          error: (err) => {
+            console.error(`Observer got an error: ${JSON.stringify(err)}`);
+          },
+        });
+      },
+      error: (err) => {
+        console.error(`Observer got an error: ${JSON.stringify(err)}`);
+      },
+    });
+  }
 
   openShow(key: string) {
-    this.service.getData(key).subscribe(
-      
-    )
+    this.service.getData(key).subscribe({
+      next: (x: any) => {
+        const theater = JSON.parse(x);
+        this.parterre = theater.slice(0, 7);
+        this.stage = theater.slice(7);
+        this.showKey = key;
+      },
+      error: (err) => alert('Chiave inserita non valida'),
+    });
   }
 }

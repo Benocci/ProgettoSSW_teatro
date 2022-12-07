@@ -12,10 +12,10 @@
 </p>
 
 <h3>Chiavi degli spettacoli disponibili:</h3>
-<div *ngFor="let s of show">
-  {{ s }}
+<div *ngFor="let show of showList">
+  {{ show }}
 </div>
 
-<h3><app-show-creator>Crea un nuovo spettacolo</app-show-creator></h3>
+<h3><button (click)="createShow()">Crea un nuovo spettacolo</button></h3>
 
 <h2 id="prova"></h2>
