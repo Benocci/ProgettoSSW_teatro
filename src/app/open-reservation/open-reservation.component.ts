@@ -8,15 +8,16 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class OpenreservationComponent implements OnInit {
   @Input() parterre: any[] | undefined;
   @Input() stage: any[] | undefined;
+  @Input() bookerName: string | undefined;
   @Output() selectedSeat = new EventEmitter<any>();
-  seat: {row: number; column: number; place: string} = undefined;
+  seat: {row: number; column: number; place: string; oldName: string} = undefined;
 
   constructor() {}
 
   ngOnInit() {}
 
-  addSeat(row: number, column: number, place: string) {
-    this.seat = {row , column, place};
+  addSeat(row: number, column: number, place: string, oldName: string) {
+    this.seat = {row , column, place, oldName};
     this.selectedSeat.emit(this.seat);
   }
 

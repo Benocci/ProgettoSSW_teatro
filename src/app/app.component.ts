@@ -13,7 +13,8 @@ export class AppComponent {
   stage: any[] = [];
   showKey: string;
   bookerName: string;
-  seat: { row: number; column: number; place: string } = undefined;
+  seat: { row: number; column: number; place: string; oldName: string } =
+    undefined;
   notification: string;
 
   constructor(private service: TheaterService) {}

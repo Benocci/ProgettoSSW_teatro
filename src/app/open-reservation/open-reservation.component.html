@@ -2,7 +2,7 @@
 <div *ngFor="let row of parterre; let i = index">
   <button
     *ngFor="let seat of row; let j = index"
-    (click)="addSeat(i, j, 'platea')"
+    (click)="addSeat(i, j, 'platea', seat)"
     style="color:{{ paint(seat) }}"
   >
     P{{ i + 1 }}-{{ j + 1 }}
@@ -13,9 +13,19 @@
 <div *ngFor="let row of stage; let i = index">
   <button
     *ngFor="let seat of row; let j = index"
-    (click)="addSeat(i, j, 'palco')"
+    (click)="addSeat(i, j, 'palco', seat)"
     style="color:{{ paint(seat) }}"
   >
     P{{ i + 1 }}-{{ j + 1 }}
   </button>
 </div>
+
+<p *ngIf="seat != undefined">
+  {{ bookerName }} hai selezionato il posto P{{ seat.row + 1 }}-{{
+    seat.column + 1
+  }}
+  in zona {{ seat.place }}.
+</p>
+<p *ngIf="seat != undefined && seat.oldName != 'x'">
+  Non puoi prenotare questo posto, è già occupato da {{ seat.oldName }}
+</p>
