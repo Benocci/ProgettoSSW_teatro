@@ -10,18 +10,32 @@ export class OpenreservationComponent implements OnInit {
   @Input() stage: any[] | undefined;
   @Input() bookerName: string | undefined;
   @Output() selectedSeat = new EventEmitter<any>();
-  seat: {row: number; column: number; place: string; oldName: string} = undefined;
+  seat: { row: number; column: number; place: string; oldName: string } =
+    undefined;
 
   constructor() {}
 
   ngOnInit() {}
 
   addSeat(row: number, column: number, place: string, oldName: string) {
-    this.seat = {row , column, place, oldName};
+    this.seat = { row, column, place, oldName };
     this.selectedSeat.emit(this.seat);
   }
 
-  paint(nome: string): string { 
-    return nome !== "x" ? "red" : "green"; 
+  colorSeat(seat: string, row: number, column: number, place: string) {
+    if (seat === 'x') {
+      if (this.seat != undefined) {
+        if (
+          this.seat.row == row &&
+          this.seat.column == column &&
+          this.seat.place == place
+        ) {
+          return 'yellow';
+        }
+      }
+      return 'green';
+    } else {
+      return 'red';
+    }
   }
 }
