@@ -15,7 +15,9 @@ export class GetReservationNameComponent implements OnInit {
   ngOnInit() {}
 
   changeName(newName: string) {
-    this.name = newName;
-    this.newBookerName.emit(this.name);
+    if (newName != '') {
+      this.name = newName;
+      this.newBookerName.emit(this.name);
+    }
   }
 }

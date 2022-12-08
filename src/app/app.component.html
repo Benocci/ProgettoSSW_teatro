@@ -37,6 +37,8 @@
   [bookerName]="bookerName"
   (selectedSeat)="seat = $event"
 ></app-openreservation>
+
+<!-- Conferma prenotazione -->
 <button
   *ngIf="seat != undefined && bookerName != undefined && seat.oldName == 'x'"
   (click)="confirmReservation()"
@@ -44,4 +46,5 @@
   Conferma prenotazione!
 </button>
 
+<!-- Notifica di avvenuta prenotazione -->
 <h2>{{ notification }}</h2>
