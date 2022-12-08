@@ -5,7 +5,7 @@
     (click)="addSeat(i, j, 'platea', seat)"
     style="background-color:{{ colorSeat(seat, i, j, 'platea') }}"
   >
-    P{{ i + 1 }}-{{ j + 1 }}
+    F{{ i + 1 }}-P{{ j + 1 }}
   </button>
 </div>
 
@@ -16,15 +16,14 @@
     (click)="addSeat(i, j, 'palco', seat)"
     style="background-color:{{ colorSeat(seat, i, j, 'palco') }}"
   >
-    P{{ i + 1 }}-{{ j + 1 }}
+    F{{ i + 1 }}-P{{ j + 1 }}
   </button>
 </div>
 
 <p *ngIf="seat != undefined">
-  {{ bookerName }} hai selezionato il posto P{{ seat.row + 1 }}-{{
-    seat.column + 1
-  }}
-  in zona {{ seat.place }}.
+  {{ bookerName }} hai selezionato il posto {{ seat.row + 1
+  }}{{ seat.column + 1 }} nella fila {{ seat.row + 1 }} in zona
+  {{ seat.place }}.
 </p>
 <p *ngIf="seat != undefined && seat.oldName != 'x'">
   Non puoi prenotare questo posto, è già occupato da {{ seat.oldName }}
