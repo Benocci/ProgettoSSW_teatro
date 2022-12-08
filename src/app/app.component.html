@@ -30,11 +30,24 @@
 
 <!-- Visualizzazione teatro -->
 <app-openreservation
+  *ngIf="bookerName != undefined"
   [parterre]="parterre"
   [stage]="stage"
   (selectedSeat)="seat = $event"
 ></app-openreservation>
 
 <p *ngIf="seat != undefined">
-  Il posto selezionato è P{{ seat.row+1 }}-{{ seat.column+1 }} nel {{seat.place}}
+  {{ bookerName }} hai selezionato il posto P{{ seat.row + 1 }}-{{
+    seat.column + 1
+  }}
+  in zona {{ seat.place }}.
 </p>
+
+<button
+  *ngIf="seat != undefined && bookerName != undefined"
+  (click)="confirmReservation()"
+>
+  Conferma prenotazione!
+</button>
+
+<h2>{{notification}}</h2>

@@ -19,4 +19,8 @@ export class OpenreservationComponent implements OnInit {
     this.seat = {row , column, place};
     this.selectedSeat.emit(this.seat);
   }
+
+  paint(nome: string): string { 
+    return nome !== "x" ? "red" : "green"; 
+  }
 }

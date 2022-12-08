@@ -3,6 +3,7 @@
   <button
     *ngFor="let seat of row; let j = index"
     (click)="addSeat(i, j, 'platea')"
+    style="color:{{ paint(seat) }}"
   >
     P{{ i + 1 }}-{{ j + 1 }}
   </button>
@@ -13,6 +14,7 @@
   <button
     *ngFor="let seat of row; let j = index"
     (click)="addSeat(i, j, 'palco')"
+    style="color:{{ paint(seat) }}"
   >
     P{{ i + 1 }}-{{ j + 1 }}
   </button>
