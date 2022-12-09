@@ -2,30 +2,45 @@
 
 <fieldset *ngIf="creation">
   <legend>Inserisci le dimensioni di platea e palchi</legend>
+  Platea di
   <input
-    #parterre_rows
     type="number"
     step="1"
-    name=""
     min="1"
-    max="16"
-    value="7"
-    style="width: 5em"
-    id="parterre_rows"
+    max="15"
+    value="10"
     placeholder="Numero di file platea..."
   />
-  file di
+  posti disposti in
   <input
-    #parterre_seats
     type="number"
-    name=""
+    step="1"
     min="1"
-    max="16"
-    value="10"
-    style="width: 5em"
-    id="parterre_seats"
-    placeholder="Numero di posti per fila..."
+    max="15"
+    value="7"
+    placeholder="Numero di file platea..."
   />
+  file.
   <br />
+  Palco di
+  <input
+    type="number"
+    step="1"
+    min="1"
+    max="15"
+    value="6"
+    placeholder="Numero di file platea..."
+  />
+  posti disposti in
+  <input
+    type="number"
+    step="1"
+    min="1"
+    max="15"
+    value="4"
+    placeholder="Numero di file platea..."
+  />
+  file.
+  <br /><br />
   <button (click)="confirmCreation()">Conferma la creazione!</button>
 </fieldset>
