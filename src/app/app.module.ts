@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TheaterService } from './theater.service';
 import { OpenreservationComponent } from './open-reservation/open-reservation.component';
 import { GetReservationNameComponent } from './get-reservation-name/get-reservation-name.component';
+import {CreateTheaterComponent} from './create-theater/create-theater.component'
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule],
@@ -14,6 +15,7 @@ import { GetReservationNameComponent } from './get-reservation-name/get-reservat
     AppComponent,
     OpenreservationComponent,
     GetReservationNameComponent,
+    CreateTheaterComponent
   ],
   providers: [TheaterService],
   bootstrap: [AppComponent],

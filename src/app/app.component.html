@@ -19,7 +19,7 @@
 </div>
 
 <!-- Creazione di un nuovo spettacolo-->
-<h3><button (click)="createShow()">Crea un nuovo spettacolo</button></h3>
+<app-create-theater (newShow)="this.showList.push($event)"></app-create-theater>
 
 <!-- Titolo dello spettacolo selezionato -->
 <h2 *ngIf="showKey != undefined">Spettacolo con codice "{{ showKey }}"</h2>
