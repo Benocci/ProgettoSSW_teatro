@@ -33,9 +33,9 @@ export class OpenreservationComponent implements OnInit {
           return 'yellow';
         }
       }
-      return 'green';
+      return '#8FBC8F';
     } else {
-      return 'red';
+      return '#FF6347';
     }
   }
 }
