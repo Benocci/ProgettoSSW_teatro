@@ -1,8 +1,18 @@
 <!-- Titolo della pagina-->
 <h1>{{ title }}</h1>
 
+<!-- Tasto per la prenotazione -->
+<h3>
+  <button (click)="startReservation()">
+    Prenotazione per uno spettacolo esistente
+  </button>
+</h3>
+
+<!-- Creazione di un nuovo spettacolo-->
+<app-create-theater (newShow)="this.showList.push($event)"></app-create-theater>
+
 <!-- Inserimento di una chiave -->
-<fieldset>
+<fieldset *ngIf="reservation">
   <legend>Inserisci la chiave associata allo spettacolo e premi invio</legend>
   <input
     class="inputKey"
@@ -13,13 +23,12 @@
 </fieldset>
 
 <!-- Lista degli spettacoli disponibili-->
-<h3>Chiavi degli spettacoli disponibili:</h3>
-<div *ngFor="let show of showList">
-  {{ show }}
+<div *ngIf="reservation">
+  <h3>Chiavi degli spettacoli disponibili:</h3>
+  <div *ngFor="let show of showList">
+    {{ show }}
+  </div>
 </div>
-
-<!-- Creazione di un nuovo spettacolo-->
-<app-create-theater (newShow)="this.showList.push($event)"></app-create-theater>
 
 <!-- Titolo dello spettacolo selezionato -->
 <h2 *ngIf="showKey != undefined">Spettacolo con codice "{{ showKey }}"</h2>

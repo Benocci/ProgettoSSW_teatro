@@ -16,8 +16,13 @@ export class AppComponent {
   seat: { row: number; column: number; place: string; oldName: string } =
     undefined;
   notification: string;
+  reservation: boolean = false;
 
   constructor(private service: TheaterService) {}
+
+  startReservation(){
+    this.reservation = true;
+  }
 
   selectShow(key: string) {
     this.service.getData(key).subscribe({

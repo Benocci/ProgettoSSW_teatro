@@ -1,1 +1,31 @@
 <h3><button (click)="createShow()">Crea un nuovo spettacolo</button></h3>
+
+<fieldset *ngIf="creation">
+  <legend>Inserisci le dimensioni di platea e palchi</legend>
+  <input
+    #parterre_rows
+    type="number"
+    step="1"
+    name=""
+    min="1"
+    max="16"
+    value="7"
+    style="width: 5em"
+    id="parterre_rows"
+    placeholder="Numero di file platea..."
+  />
+  file di
+  <input
+    #parterre_seats
+    type="number"
+    name=""
+    min="1"
+    max="16"
+    value="10"
+    style="width: 5em"
+    id="parterre_seats"
+    placeholder="Numero di posti per fila..."
+  />
+  <br />
+  <button (click)="confirmCreation()">Conferma la creazione!</button>
+</fieldset>

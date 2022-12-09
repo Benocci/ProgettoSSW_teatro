@@ -8,12 +8,21 @@ import { TheaterService } from '../theater.service';
 })
 export class CreateTheaterComponent implements OnInit {
   @Output() newShow = new EventEmitter<string>();
+  creation: boolean = false;
+  row_parterre: number = 7;
+  column_parterre: number = 10;
+  row_stage: number = 4;
+  column_stage: number = 6;
 
   constructor(private service: TheaterService) {}
 
   ngOnInit() {}
 
   createShow() {
+    this.creation = true;
+  }
+
+  confirmCreation() {
     this.service.newData().subscribe({
       next: (x: any) => {
         const chiave = x;
@@ -34,5 +43,7 @@ export class CreateTheaterComponent implements OnInit {
         console.error(`Observer got an error: ${JSON.stringify(err)}`);
       },
     });
+
+    this.creation = false;
   }
 }

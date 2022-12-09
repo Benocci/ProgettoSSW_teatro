@@ -1,6 +1,6 @@
 # ProgettoSSW_teatro
 
-Progetto di sistemi di sviluppo web (SSW - 721AA)
+Progetto di sistemi di sviluppo web (SSW - 721AA).
 
 ## Spiegazione del progetto
 
