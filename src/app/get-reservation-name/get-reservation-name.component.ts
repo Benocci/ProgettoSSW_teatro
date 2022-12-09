@@ -9,6 +9,7 @@ export class GetReservationNameComponent implements OnInit {
   @Input() key: string | undefined;
   @Output() newBookerName = new EventEmitter<string>();
   name: string;
+  fastReservation: boolean = false;
 
   constructor() {}
 
@@ -19,5 +20,9 @@ export class GetReservationNameComponent implements OnInit {
       this.name = newName;
       this.newBookerName.emit(this.name);
     }
+  }
+
+  setFastReservation(value: boolean){
+    this.fastReservation = value;
   }
 }

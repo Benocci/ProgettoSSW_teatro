@@ -8,9 +8,17 @@
     #newName
     (keyup.enter)="changeName(newName.value); newName.value = ''"
   />
+  <br />
+  Seleziona prenotazione veloce:
+  <input type="checkbox" #input (click)="setFastReservation(input.checked)" />
 
   <p *ngIf="name !== undefined">
+    <div *ngIf="fastReservation == false">
     Ciao {{ name }}, clicca sui posti che vuoi prenotare!<br />
     Se vuoi cambiare nome digitane pure uno nuovo.
+    </div>
+    <div *ngIf="fastReservation">
+      Ciao {{ name }}, clicca sui posti per prenotarli all'istante!
+    </div>
   </p>
 </fieldset>
