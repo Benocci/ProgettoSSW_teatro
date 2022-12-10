@@ -51,7 +51,12 @@
 
 <!-- Conferma prenotazione -->
 <button
-  *ngIf="seat != undefined && bookerName != undefined && seat.oldName == 'x'"
+  *ngIf="
+    seat != undefined &&
+    bookerName != undefined &&
+    seat.oldName == 'x' &&
+    !fastReservation
+  "
   (click)="confirmReservation()"
 >
   Conferma prenotazione!

@@ -68,7 +68,12 @@ export class AppComponent {
     const newTheater = this.parterre.concat(this.stage);
     this.service.setData(this.showKey, newTheater).subscribe({
       next: (x: any) => {
-        this.notification = 'Prenotazione avvenuta con successo!';
+        this.notification =
+          'Prenotazione del posto ' +
+          (this.seat.column + 1) +
+          ' in fila ' +
+          (this.seat.row + 1) +
+          ' avvenuta con successo!';
         this.seat = undefined;
       },
       error: (err) =>

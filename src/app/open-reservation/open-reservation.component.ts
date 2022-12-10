@@ -9,7 +9,7 @@ export class OpenreservationComponent implements OnInit {
   @Input() parterre: any[] | undefined;
   @Input() stage: any[] | undefined;
   @Input() bookerName: string | undefined;
-  @Input() fastReservation: boolean | undefined;
+  @Input() fastReservation: boolean = false;
   @Output() selectedSeat = new EventEmitter<any>();
   seat: { row: number; column: number; place: string; oldName: string } =
     undefined;
@@ -29,7 +29,8 @@ export class OpenreservationComponent implements OnInit {
         if (
           this.seat.row == row &&
           this.seat.column == column &&
-          this.seat.place == place
+          this.seat.place == place &&
+          !this.fastReservation
         ) {
           return 'yellow';
         }
