@@ -1,6 +1,6 @@
 # ProgettoSSW_teatro
 
-Progetto di sistemi di sviluppo web (SSW - 721AA).
+Progetto di sviluppo di sistemi web (SSW - 721AA).
 
 ## Spiegazione del progetto
 
@@ -12,5 +12,8 @@ Dopo aver inserito il codice dello spettacolo e il suo nome l'utente può prenot
 
 Il progetto oltre al componente app di base utilizza altri due componenti che rappresentano rispettivamente la scelta del nome e la scelta del posto:
 
-- get-reservation-name -> rappresenta la scelta del nome, contiene l'inputbox di lettura del nome che viene poi inviato al component padre app:
-- open-reservation -> stampa a schermo le due griglie di posti del teatro e permette la scelta del posto, al suo interno viene anche controllato che esso sia libero.
+- get-reservation-name -> rappresenta la scelta del nome, contiene l'inputbox di lettura del nome e la scelta di prenotazione rapida, questi dati vengono poi inviati al component padre app;
+- open-reservation -> stampa a schermo le due griglie di posti del teatro e permette la scelta del posto, al suo interno viene anche controllato che esso sia libero;
+- create-theater -> contiente la creazione di un nuovo spettacolo (che può essere anche in un teatro con numero di posti diverso da quello di default).
+
+## Principali scelte di programmazione
