@@ -8,7 +8,7 @@ import { TheaterService } from './theater.service';
 })
 export class AppComponent {
   title = 'Prenotazione teatro';
-  showList: string[] = ['e08227ec'];
+  showList: string[] = ['2293a957'];
   parterre: any[] = [];
   stage: any[] = [];
   showKey: string;
@@ -45,7 +45,7 @@ export class AppComponent {
     oldName: string;
   }) {
     this.seat = newSeat;
-    if (this.fastReservation) {
+    if (this.fastReservation && this.seat.oldName == 'x') {
       this.confirmReservation();
     }
   }
@@ -66,7 +66,9 @@ export class AppComponent {
     } else {
       this.stage[this.seat.row][this.seat.column] = this.bookerName;
     }
-    const newTheater = this.parterre.concat(this.stage);
+    const newTheaterTmp = this.parterre.concat(this.stage);
+    const num_slice: any[] = [this.parterre.length];
+    const newTheater = num_slice.concat(newTheaterTmp);
     this.service.setData(this.showKey, newTheater).subscribe({
       next: (x: any) => {
         this.notification =
