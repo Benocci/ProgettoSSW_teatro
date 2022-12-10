@@ -8,15 +8,16 @@ import { TheaterService } from './theater.service';
 })
 export class AppComponent {
   title = 'Prenotazione teatro';
-  showList: string[] = ['2293a957'];
-  parterre: any[] = [];
-  stage: any[] = [];
-  showKey: string;
-  bookerName: string;
-  fastReservation: boolean = false;
+  showList: string[] = ['2293a957']; //lista di codici collegati agli spettacoli
+  parterre: any[] = []; //array di array di stringhe che rappresenta i posti della platea
+  stage: any[] = []; //array di array di stringhe che rappresenta i posti del palco
+  showKey: string; //chiave dello spettacolo che è attivo al momento
+  bookerName: string; //nome della prenotazione attiva al momento
+  fastReservation: boolean = false; //booleano che indica se è attiva la prenotazione veloce
   seat: { row: number; column: number; place: string; oldName: string } =
-    undefined;
-  notification: string;
+    undefined; //posto selezionato oppure appena prenotato
+  notification: string; //stringa di notifica
+
   reservation: boolean = false;
 
   constructor(private service: TheaterService) {}
