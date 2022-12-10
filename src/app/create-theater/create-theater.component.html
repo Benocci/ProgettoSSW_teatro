@@ -10,6 +10,8 @@
     max="15"
     value="10"
     placeholder="Numero di file platea..."
+    #numberColumnParterre
+    (click)="setColumnParterre(numberColumnParterre.value)"
   />
   posti disposti in
   <input
@@ -19,6 +21,8 @@
     max="15"
     value="7"
     placeholder="Numero di file platea..."
+    #numberRowParterre
+    (click)="setRowParterre(numberRowParterre.value)"
   />
   file.
   <br />
@@ -30,6 +34,8 @@
     max="15"
     value="6"
     placeholder="Numero di file platea..."
+    #numberColumnStage
+    (click)="setColumnStage(numberColumnStage.value)"
   />
   posti disposti in
   <input
@@ -39,8 +45,12 @@
     max="15"
     value="4"
     placeholder="Numero di file platea..."
+    #numberRowStage
+    (click)="setRowStage(numberRowStage.value)"
   />
   file.
   <br /><br />
   <button (click)="confirmCreation()">Conferma la creazione!</button>
 </fieldset>
+
+<h2>{{ notification }}</h2>

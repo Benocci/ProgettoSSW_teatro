@@ -14,12 +14,30 @@ export class CreateTheaterComponent implements OnInit {
   row_stage: number = 4;
   column_stage: number = 6;
 
+  notification: string;
+
   constructor(private service: TheaterService) {}
 
   ngOnInit() {}
 
   createShow() {
     this.creation = true;
+  }
+
+  setRowParterre(value: string) {
+    this.row_parterre = parseFloat(value);
+  }
+
+  setColumnParterre(value: string) {
+    this.column_parterre = parseFloat(value);
+  }
+
+  setRowStage(value: string) {
+    this.row_stage = parseFloat(value);
+  }
+
+  setColumnStage(value: string) {
+    this.column_stage = parseFloat(value);
   }
 
   confirmCreation() {
@@ -39,6 +57,19 @@ export class CreateTheaterComponent implements OnInit {
         this.service.setData(chiave, infoTheater).subscribe({
           next: (x: any) => {
             this.newShow.emit(chiave);
+
+            this.notification =
+              'Creazione del nuovo spettacolo con codice: "' +
+              chiave +
+              '" in un teatro con platea di ' +
+              this.row_parterre +
+              ' file con ' +
+              this.column_parterre +
+              ' posti e un palco di ' +
+              this.row_stage +
+              ' file di ' +
+              this.column_stage +
+              ' posti.';
           },
           error: (err) => {
             console.error(`Observer got an error: ${JSON.stringify(err)}`);
