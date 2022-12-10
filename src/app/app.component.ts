@@ -13,6 +13,7 @@ export class AppComponent {
   stage: any[] = [];
   showKey: string;
   bookerName: string;
+  fastReservation: boolean = false;
   seat: { row: number; column: number; place: string; oldName: string } =
     undefined;
   notification: string;
@@ -20,7 +21,7 @@ export class AppComponent {
 
   constructor(private service: TheaterService) {}
 
-  startReservation(){
+  startReservation() {
     this.reservation = true;
   }
 
@@ -34,6 +35,18 @@ export class AppComponent {
       },
       error: (err) => alert('Chiave inserita non valida'),
     });
+  }
+
+  setNewSeat(newSeat: {
+    row: number;
+    column: number;
+    place: string;
+    oldName: string;
+  }) {
+    this.seat = newSeat;
+    if (this.fastReservation) {
+      this.confirmReservation();
+    }
   }
 
   confirmReservation() {

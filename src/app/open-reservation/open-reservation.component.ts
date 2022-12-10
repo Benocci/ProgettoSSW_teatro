@@ -9,6 +9,7 @@ export class OpenreservationComponent implements OnInit {
   @Input() parterre: any[] | undefined;
   @Input() stage: any[] | undefined;
   @Input() bookerName: string | undefined;
+  @Input() fastReservation: boolean | undefined;
   @Output() selectedSeat = new EventEmitter<any>();
   seat: { row: number; column: number; place: string; oldName: string } =
     undefined;

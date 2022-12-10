@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class GetReservationNameComponent implements OnInit {
   @Input() key: string | undefined;
   @Output() newBookerName = new EventEmitter<string>();
+  @Output() isFastReservation = new EventEmitter<boolean>();
   name: string;
   fastReservation: boolean = false;
 
@@ -22,7 +23,8 @@ export class GetReservationNameComponent implements OnInit {
     }
   }
 
-  setFastReservation(value: boolean){
+  setFastReservation(value: boolean) {
     this.fastReservation = value;
+    this.isFastReservation.emit(this.fastReservation);
   }
 }
