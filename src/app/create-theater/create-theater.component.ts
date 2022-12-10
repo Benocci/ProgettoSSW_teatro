@@ -26,11 +26,17 @@ export class CreateTheaterComponent implements OnInit {
     this.service.newData().subscribe({
       next: (x: any) => {
         const chiave = x;
-        const theater = new Array(7)
+        const theater = new Array(this.row_parterre)
           .fill('')
-          .map(() => Array(10).fill('x'))
-          .concat(new Array(4).fill('').map(() => Array(6).fill('x')));
-        this.service.setData(chiave, theater).subscribe({
+          .map(() => Array(this.column_parterre).fill('x'))
+          .concat(
+            new Array(this.row_stage)
+              .fill('')
+              .map(() => Array(this.column_stage).fill('x'))
+          );
+        const num_slice: any[] = [this.row_parterre];
+        const infoTheater = num_slice.concat(theater);
+        this.service.setData(chiave, infoTheater).subscribe({
           next: (x: any) => {
             this.newShow.emit(chiave);
           },

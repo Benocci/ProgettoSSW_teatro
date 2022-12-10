@@ -8,7 +8,7 @@ import { TheaterService } from './theater.service';
 })
 export class AppComponent {
   title = 'Prenotazione teatro';
-  showList: string[] = ['3054e7d3'];
+  showList: string[] = ['e08227ec'];
   parterre: any[] = [];
   stage: any[] = [];
   showKey: string;
@@ -29,8 +29,9 @@ export class AppComponent {
     this.service.getData(key).subscribe({
       next: (x: any) => {
         const theater = JSON.parse(x);
-        this.parterre = theater.slice(0, 7);
-        this.stage = theater.slice(7);
+        const numParterreRow = theater[0];
+        this.parterre = theater.slice(1, numParterreRow + 1);
+        this.stage = theater.slice(numParterreRow + 1);
         this.showKey = key;
       },
       error: (err) => alert('Chiave inserita non valida'),
