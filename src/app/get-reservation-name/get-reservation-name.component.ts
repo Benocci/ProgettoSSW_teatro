@@ -18,6 +18,10 @@ export class GetReservationNameComponent implements OnInit {
 
   changeName(newName: string) {
     if (newName != '') {
+      if (newName == 'x') {
+        alert("Nome 'x' riservato, si prega di utilizzarne un altro.");
+        return;
+      }
       this.name = newName;
       this.newBookerName.emit(this.name);
     }
