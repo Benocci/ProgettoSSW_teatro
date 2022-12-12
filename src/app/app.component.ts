@@ -77,11 +77,14 @@ export class AppComponent {
           (this.seat.column + 1) +
           ' in fila ' +
           (this.seat.row + 1) +
+          ' nella sezione ' +
+          this.seat.place +
           ' avvenuta con successo!';
         this.seat = undefined;
       },
-      error: (err) =>
-        console.error(`Observer got an error: ${JSON.stringify(err)}`),
+      error: (err) => {
+        alert(`Errore nella setData: ${JSON.stringify(err)}`);
+      },
     });
   }
 }

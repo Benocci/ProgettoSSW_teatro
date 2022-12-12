@@ -72,12 +72,12 @@ export class CreateTheaterComponent implements OnInit {
               ' posti.';
           },
           error: (err) => {
-            console.error(`Observer got an error: ${JSON.stringify(err)}`);
+            alert(`Errore nella setData: ${JSON.stringify(err)}`);
           },
         });
       },
       error: (err) => {
-        console.error(`Observer got an error: ${JSON.stringify(err)}`);
+        alert(`Errore nella newData: ${JSON.stringify(err)}`);
       },
     });
 
