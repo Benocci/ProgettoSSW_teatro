@@ -15,14 +15,15 @@ export class AppComponent {
   bookerName: string; //nome della prenotazione attiva al momento
   fastReservation: boolean = false; //booleano che indica se è attiva la prenotazione veloce
   seat: { row: number; column: number; place: string; oldName: string } =
-    undefined; //posto selezionato oppure appena prenotato
+    undefined; //posto selezionato oppure appena prenotato, struttura che contiene {numero fila, numero del posto, platea/palco, vecchio nome (se vuoto ='x')}
   notification: string; //stringa di notifica
 
-  reservation: boolean = false;
+  reservation: boolean = false; // booleano che attiva il form per la prenotazione
 
   constructor(private service: TheaterService) {}
 
   startReservation() {
+    // funzione che attiva il form per la prenotazione
     this.reservation = true;
   }
 
@@ -35,7 +36,7 @@ export class AppComponent {
         this.stage = theater.slice(numParterreRow + 1);
         this.showKey = key;
       },
-      error: (err) => alert('Chiave inserita non valida'),
+      error: (err) => alert('Chiave inserita non valida!'),
     });
   }
 
